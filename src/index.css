@@ -1895,7 +1895,7 @@ body.light-theme .credential-deck-title {
 @media (max-width: 992px) {
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 6rem;
+        padding-top: 8.5rem;
         padding-bottom: 2.5rem;
         gap: 2rem;
         text-align: center;
@@ -1906,6 +1906,7 @@ body.light-theme .credential-deck-title {
     .hero-content {
         align-items: center;
         text-align: center;
+        width: 100%;
     }
 
     .hero-title {
@@ -2020,7 +2021,7 @@ body.light-theme .credential-deck-title {
 
     /* Hero Section */
     .hero {
-        padding-top: 5.5rem;
+        padding-top: 8rem !important;
         padding-bottom: 2rem;
         gap: 1.75rem;
         min-height: auto;
@@ -2149,6 +2150,10 @@ body.light-theme .credential-deck-title {
 
     .section {
         padding: 3.5rem 0 1.5rem;
+    }
+
+    .hero {
+        padding-top: 8rem !important;
     }
 
     .section-title {

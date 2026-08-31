@@ -38,8 +38,8 @@ export default function PullCord({ theme, toggleTheme }) {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  // Cord physics - shorter on mobile to stay visible below navbar
-  const defaultLength = isMobile ? 44 : 78;
+  // Cord physics - hangs gracefully just below header line
+  const defaultLength = isMobile ? 70 : 78;
   const dragY = useMotionValue(0);
   const smoothY = useSpring(dragY, { stiffness: 500, damping: 16, mass: 0.7 });
 
@@ -56,14 +56,14 @@ export default function PullCord({ theme, toggleTheme }) {
 
   const handleDragEnd = (event, info) => {
     setIsPulling(false);
-    if (info.offset.y > 25) {
+    if (info.offset.y > 20) {
       handlePullComplete();
     }
     dragY.set(0);
   };
 
   const handleClick = () => {
-    dragY.set(35);
+    dragY.set(30);
     setTimeout(() => {
       handlePullComplete();
       dragY.set(0);
@@ -80,10 +80,10 @@ export default function PullCord({ theme, toggleTheme }) {
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '32px',
-        height: '42px',
+        width: '36px',
+        height: '44px',
         userSelect: 'none',
-        zIndex: 50
+        zIndex: 110
       }}
     >
       {/* Light burst flash on switch */}
@@ -97,12 +97,12 @@ export default function PullCord({ theme, toggleTheme }) {
             style={{
               position: 'absolute',
               top: `${defaultLength - 38}px`,
-              left: '0px',
+              left: '2px',
               width: '32px',
               height: '32px',
               borderRadius: '50%',
               background: isLight
-                ? 'radial-gradient(circle, rgba(255, 230, 120, 0.9) 0%, rgba(99, 102, 241, 0) 70%)'
+                ? 'radial-gradient(circle, rgba(245, 158, 11, 0.9) 0%, rgba(99, 102, 241, 0) 70%)'
                 : 'radial-gradient(circle, rgba(99, 102, 241, 0.9) 0%, rgba(6, 182, 212, 0) 70%)',
               pointerEvents: 'none',
               zIndex: 1
@@ -115,8 +115,8 @@ export default function PullCord({ theme, toggleTheme }) {
       <svg
         style={{
           position: 'absolute',
-          top: '-20px', // Top anchor mount
-          left: '16px',
+          top: '-15px', // Top anchor mount
+          left: '17px',
           width: '20px',
           height: `${defaultLength + 80}px`,
           overflow: 'visible',
@@ -128,32 +128,32 @@ export default function PullCord({ theme, toggleTheme }) {
           y1="0"
           x2="0"
           y2={cordHeight}
-          stroke={isLight ? '#475569' : '#94a3b8'}
-          strokeWidth="2"
+          stroke={isLight ? '#334155' : '#c7d2fe'}
+          strokeWidth="2.5"
           strokeDasharray="4 2"
           strokeLinecap="round"
-          style={{ opacity: 0.85 }}
+          style={{ opacity: 0.9 }}
         />
         {/* Top anchor mount point */}
-        <circle cx="0" cy="2" r="2.5" fill={isLight ? '#1e293b' : '#c7d2fe'} />
+        <circle cx="0" cy="2" r="3" fill={isLight ? '#0f172a' : '#818cf8'} />
       </svg>
 
       {/* Pull Handle / Bead */}
       <motion.div
         drag="y"
-        dragConstraints={{ top: 0, bottom: 55 }}
-        dragElastic={0.55}
+        dragConstraints={{ top: 0, bottom: 50 }}
+        dragElastic={0.5}
         onDragStart={() => setIsPulling(true)}
         onDragEnd={handleDragEnd}
         onClick={handleClick}
         style={{
           position: 'absolute',
-          top: '-20px',
-          left: '6px',
+          top: '-15px',
+          left: '7px',
           y: smoothY,
           cursor: 'grab',
           touchAction: 'none',
-          zIndex: 10
+          zIndex: 20
         }}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.92, cursor: 'grabbing' }}
@@ -162,16 +162,16 @@ export default function PullCord({ theme, toggleTheme }) {
         <div
           style={{
             marginTop: `${defaultLength}px`,
-            width: '20px',
-            height: '20px',
+            width: '22px',
+            height: '22px',
             borderRadius: '50%',
             background: isLight
-              ? 'radial-gradient(circle at 35% 35%, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%)'
-              : 'radial-gradient(circle at 35% 35%, #ffffff 0%, #e0e7ff 40%, #6366f1 100%)',
+              ? 'radial-gradient(circle at 35% 35%, #ffffff 0%, #f59e0b 55%, #d97706 100%)'
+              : 'radial-gradient(circle at 35% 35%, #ffffff 0%, #818cf8 50%, #4f46e5 100%)',
             boxShadow: isLight
-              ? '0 6px 14px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.15)'
-              : '0 0 16px rgba(99, 102, 241, 0.7), 0 6px 14px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(0,0,0,0.3)',
-            border: `1.5px solid ${isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.45)'}`,
+              ? '0 0 12px rgba(245, 158, 11, 0.75), 0 4px 10px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(0,0,0,0.2)'
+              : '0 0 16px rgba(99, 102, 241, 0.85), 0 6px 14px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.3)',
+            border: `1.5px solid ${isLight ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.5)'}`,
             transition: 'background 0.3s, box-shadow 0.3s, border 0.3s',
             position: 'relative'
           }}
@@ -181,10 +181,10 @@ export default function PullCord({ theme, toggleTheme }) {
             style={{
               position: 'absolute',
               top: '-4px',
-              left: '7px',
+              left: '8px',
               width: '6px',
               height: '5px',
-              background: isLight ? '#64748b' : '#a5b4fc',
+              background: isLight ? '#0f172a' : '#c7d2fe',
               borderRadius: '2px 2px 0 0'
             }}
           />
