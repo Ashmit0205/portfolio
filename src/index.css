@@ -769,6 +769,7 @@ body.light-theme .btn-primary:hover {
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--glass-border);
     transition: background-color 0.4s ease, border-color 0.4s ease;
+    overflow: visible;
 }
 
 body.light-theme .header {

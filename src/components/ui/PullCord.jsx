@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mechanical click sound using Web Audio API
@@ -29,9 +29,17 @@ export default function PullCord({ theme, toggleTheme }) {
   const [hasInteracted, setHasInteracted] = useState(false);
   const [isPulling, setIsPulling] = useState(false);
   const [flash, setFlash] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Cord physics - optimized for navbar height
-  const defaultLength = 78;
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  // Cord physics - shorter on mobile to stay visible below navbar
+  const defaultLength = isMobile ? 44 : 78;
   const dragY = useMotionValue(0);
   const smoothY = useSpring(dragY, { stiffness: 500, damping: 16, mass: 0.7 });
 
