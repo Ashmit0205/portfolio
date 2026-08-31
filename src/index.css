@@ -1895,11 +1895,12 @@ body.light-theme .credential-deck-title {
 @media (max-width: 992px) {
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 8.5rem;
+        padding-top: 6rem;
         padding-bottom: 2.5rem;
-        gap: 2.5rem;
+        gap: 2rem;
         text-align: center;
         min-height: auto;
+        align-items: start;
     }
 
     .hero-content {
@@ -2019,10 +2020,11 @@ body.light-theme .credential-deck-title {
 
     /* Hero Section */
     .hero {
-        padding-top: 7.5rem;
+        padding-top: 5.5rem;
         padding-bottom: 2rem;
-        gap: 2rem;
+        gap: 1.75rem;
         min-height: auto;
+        align-items: start;
     }
 
     .hero-title {
