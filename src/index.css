@@ -1889,6 +1889,18 @@ body.light-theme .credential-deck-title {
         font-size: 2.25rem;
     }
 
+    .nav-menu {
+        display: none !important;
+    }
+
+    .nav-cta {
+        display: none !important;
+    }
+
+    .mobile-menu-btn {
+        display: inline-flex !important;
+    }
+
     .about-grid,
     .contact-wrapper,
     .credentials-grid,
@@ -1921,11 +1933,15 @@ body.light-theme .credential-deck-title {
     }
 
     .mobile-menu-btn {
-        display: inline-flex;
+        display: inline-flex !important;
     }
 
     .nav-cta {
-        display: none;
+        display: none !important;
+    }
+
+    .pull-cord-tooltip {
+        display: none !important;
     }
 
     /* Hero Section */
