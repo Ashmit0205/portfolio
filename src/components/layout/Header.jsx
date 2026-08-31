@@ -122,39 +122,73 @@ export default function Header({ theme, toggleTheme }) {
           })}
         </ul>
 
-        {/* Mobile menu */}
+        {/* Mobile Slide-down Glass Drawer */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.ul
-              className="nav-menu active"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              {navLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <a href={href} className="nav-link" onClick={() => setMobileOpen(false)}>{label}</a>
-                </li>
-              ))}
-            </motion.ul>
+            <>
+              <motion.div
+                className="mobile-drawer-backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setMobileOpen(false)}
+              />
+              <motion.div
+                className="mobile-drawer"
+                initial={{ opacity: 0, y: -15, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -12, scale: 0.98 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <ul className="mobile-drawer-list">
+                  {navLinks.map(({ href, label }, idx) => {
+                    const id = href.replace('#', '');
+                    const num = `0${idx + 1}`;
+                    return (
+                      <li key={href}>
+                        <a
+                          href={href}
+                          className={`mobile-drawer-link${activeSection === id ? ' active' : ''}`}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <span className="mobile-drawer-num">{num}</span>
+                          <span className="mobile-drawer-label">{label}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="mobile-drawer-cta">
+                  <a
+                    href="#contact"
+                    className="btn btn-primary"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Contact Me
+                  </a>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
 
         <div className="nav-actions">
-          {/* Pull The Cord Switch right before Contact Me button */}
+          {/* Pull The Cord Switch */}
           <PullCord theme={theme} toggleTheme={toggleTheme} />
 
           <Magnet padding={40} magnetStrength={3}>
             <a href="#contact" className="btn btn-secondary nav-cta" id="nav-cta-btn">Contact Me</a>
           </Magnet>
 
+          {/* Dedicated Glassmorphic Mobile Burger Button */}
           <button
             className="mobile-menu-btn"
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
             onClick={() => setMobileOpen((o) => !o)}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>
