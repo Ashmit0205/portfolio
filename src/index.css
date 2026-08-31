@@ -1871,6 +1871,8 @@ body.light-theme .credential-deck-title {
 .back-to-top:hover {
     color: var(--accent-cyan);
     transform: translateY(-2px);
+}
+
 /* Credentials Layout Grid */
 .credentials-layout-grid {
     display: grid;
