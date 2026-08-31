@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Ashmit Gupta — Developer Portfolio
+# Ashmit Gupta — Developer Portfolio
 
 [![React](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -15,6 +15,19 @@
 </p>
 
 </div>
+
+---
+
+## 👨‍💻 About Me
+
+Hi, I'm **Ashmit Gupta** — a Computer Science student and software developer based in Bangalore. 
+
+I focus on engineering practical software systems, spanning **full-stack platforms**, **smart contracts / Web3**, **robotics & embedded systems (ESP32/Arduino)**, and **API-driven automation pipelines**.
+
+- 🔭 **Current Focus**: Decentralized applications (Solidity/Ethers.js), embedded systems, and automated workflows.
+- 💡 **Engineering Philosophy**: Pragmatic builder who prioritizes tangible, working architectures over pure theoretical concepts.
+- 📍 **Location**: Bangalore, India
+- 📬 **Direct Email**: [ashmit0205@gmail.com](mailto:ashmit0205@gmail.com)
 
 ---
 
@@ -170,7 +183,7 @@ npm run preview
 
 - **GitHub**: [@Ashmit0205](https://github.com/Ashmit0205)
 - **LinkedIn**: [Ashmit Gupta](https://www.linkedin.com/in/ashmit-gupta-386560343/)
-- **Email**: [ashmitgupta14@gmail.com](mailto:ashmitgupta14@gmail.com)
+- **Email**: [ashmit0205@gmail.com](mailto:ashmit0205@gmail.com)
 
 ---
 
