@@ -73,7 +73,7 @@ export default function Hero({ theme = 'dark' }) {
         {/* React Bits: Blur Text Staggered Letter Reveal Headline */}
         <h1
           style={{
-            fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)',
+            fontSize: 'clamp(1.75rem, 7.5vw, 4.4rem)',
             fontWeight: 900,
             letterSpacing: '-0.03em',
             lineHeight: 1.05,
@@ -90,7 +90,7 @@ export default function Hero({ theme = 'dark' }) {
           />
         </h1>
 
-        <div className="hero-title" style={{ fontSize: '2rem', margin: '0 0 1rem 0', fontWeight: 600 }}>
+        <div className="hero-title" style={{ margin: '0 0 1rem 0', fontWeight: 600 }}>
           Building software, automation, & systems that turn ideas into reality.
         </div>
 
