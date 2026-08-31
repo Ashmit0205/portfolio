@@ -79,19 +79,25 @@ export default function Header({ theme, toggleTheme }) {
             aria-label="Ashmit Gupta Home"
             style={{
               color: theme === 'light' ? '#000000' : '#ffffff',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.15rem'
             }}
           >
-            <span className="ascii-bracket">&lt;</span>
+            <span className="ascii-bracket" style={{ flexShrink: 0 }}>&lt;</span>
             <span
               style={{
                 color: theme === 'light' ? '#000000' : '#ffffff',
-                fontWeight: 800
+                fontWeight: 800,
+                whiteSpace: 'nowrap'
               }}
             >
               Ashmit Gupta
             </span>
-            <span className="ascii-bracket">/&gt;</span>
+            <span className="ascii-bracket" style={{ flexShrink: 0 }}>/&gt;</span>
           </a>
         </Magnet>
 

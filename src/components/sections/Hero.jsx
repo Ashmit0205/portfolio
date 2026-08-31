@@ -103,32 +103,37 @@ export default function Hero({ theme = 'dark' }) {
         </p>
 
         <div className="hero-ctas">
-          {/* React Bits: Magnet CTA Buttons */}
-          <Magnet padding={50} magnetStrength={3}>
-            <a href="#journey" className="btn btn-primary" id="hero-view-work">
-              <span>View Project Journey</span>
-              <ArrowDown size={16} className="btn-icon" />
-            </a>
-          </Magnet>
+          {/* Main Action CTAs */}
+          <div className="hero-main-ctas">
+            <Magnet padding={35} magnetStrength={3}>
+              <a href="#journey" className="btn btn-primary" id="hero-view-work">
+                <span>View Project Journey</span>
+                <ArrowDown size={16} className="btn-icon" />
+              </a>
+            </Magnet>
 
-          <Magnet padding={50} magnetStrength={3}>
-            <a href="#" className="btn btn-secondary" id="download-resume-btn">
-              <Download size={16} />
-              <span>Download Resume</span>
-            </a>
-          </Magnet>
+            <Magnet padding={35} magnetStrength={3}>
+              <a href="#" className="btn btn-secondary" id="download-resume-btn">
+                <Download size={16} />
+                <span>Download Resume</span>
+              </a>
+            </Magnet>
+          </div>
 
-          <Magnet padding={40} magnetStrength={2.5}>
-            <a href="https://github.com/Ashmit0205" target="_blank" rel="noreferrer" className="btn-icon-link" id="hero-github-link" aria-label="GitHub Profile">
-              <GithubIcon />
-            </a>
-          </Magnet>
+          {/* Social Links Group */}
+          <div className="hero-social-ctas">
+            <Magnet padding={25} magnetStrength={2.5}>
+              <a href="https://github.com/Ashmit0205" target="_blank" rel="noreferrer" className="btn-icon-link" id="hero-github-link" aria-label="GitHub Profile">
+                <GithubIcon />
+              </a>
+            </Magnet>
 
-          <Magnet padding={40} magnetStrength={2.5}>
-            <a href="https://www.linkedin.com/in/ashmit-gupta-386560343/" target="_blank" rel="noreferrer" className="btn-icon-link" id="hero-linkedin-link" aria-label="LinkedIn Profile">
-              <LinkedinIcon />
-            </a>
-          </Magnet>
+            <Magnet padding={25} magnetStrength={2.5}>
+              <a href="https://www.linkedin.com/in/ashmit-gupta-386560343/" target="_blank" rel="noreferrer" className="btn-icon-link" id="hero-linkedin-link" aria-label="LinkedIn Profile">
+                <LinkedinIcon />
+              </a>
+            </Magnet>
+          </div>
         </div>
       </motion.div>
 
