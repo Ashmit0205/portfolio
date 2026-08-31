@@ -1981,15 +1981,31 @@ body.light-theme .credential-deck-title {
         padding: 5rem 0 2rem;
     }
 
-    /* Prevent horizontal overflow on mobile */
-    .section,
-    .container {
+    /* Prevent horizontal overflow on main content while keeping navbar dropdown/cord visible */
+    main,
+    .section {
         overflow-x: hidden;
+    }
+
+    .header,
+    .header .container,
+    .nav,
+    .nav-actions,
+    .pull-cord-nav-item {
+        overflow: visible !important;
     }
 }
 
 @media (max-width: 768px) {
     /* Header & Navigation */
+    .header,
+    .header .container,
+    .nav,
+    .nav-actions,
+    .pull-cord-nav-item {
+        overflow: visible !important;
+    }
+
     .nav {
         height: 4rem;
     }
@@ -2016,7 +2032,20 @@ body.light-theme .credential-deck-title {
     }
 
     .pull-cord-tooltip {
-        display: none !important;
+        display: flex !important;
+        right: 28px !important;
+        width: 105px !important;
+        gap: 4px !important;
+    }
+
+    .pull-cord-tooltip div {
+        font-size: 1.1rem !important;
+        line-height: 1.05 !important;
+    }
+
+    .pull-cord-tooltip svg {
+        width: 26px !important;
+        height: 24px !important;
     }
 
     /* Hero Section */
