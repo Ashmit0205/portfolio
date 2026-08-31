@@ -1505,6 +1505,13 @@ body.light-theme .timeline-v2::before {
 }
 
 /* Skills Section */
+.skills-interactive-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
 .skills-grid-v2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1887,7 +1894,7 @@ body.light-theme .credential-deck-title {
 @media (max-width: 992px) {
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 7rem;
+        padding-top: 8.5rem;
         padding-bottom: 2.5rem;
         gap: 2.5rem;
         text-align: center;
@@ -1962,8 +1969,19 @@ body.light-theme .credential-deck-title {
         gap: 2rem;
     }
 
+    .skills-interactive-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
     .section {
         padding: 5rem 0 2rem;
+    }
+
+    /* Prevent horizontal overflow on mobile */
+    .section,
+    .container {
+        overflow-x: hidden;
     }
 }
 
@@ -2000,7 +2018,7 @@ body.light-theme .credential-deck-title {
 
     /* Hero Section */
     .hero {
-        padding-top: 6.5rem;
+        padding-top: 7.5rem;
         padding-bottom: 2rem;
         gap: 2rem;
         min-height: auto;

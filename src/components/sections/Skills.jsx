@@ -125,7 +125,7 @@ export default function Skills() {
       </div>
 
       {/* Interactive Category Selector & Animated List */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px) 1fr', gap: '2rem', alignItems: 'start' }}>
+      <div className="skills-interactive-grid">
         {/* Category Navigation Stack */}
         <SpotlightCard
           spotlightColor="rgba(99, 102, 241, 0.15)"
