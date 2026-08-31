@@ -52,7 +52,7 @@ export default function Credentials() {
         <div className="section-header-divider" />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
+      <div className="credentials-layout-grid">
         {/* React Bits: Card Swap 3D Stacking Deck */}
         <div>
           <h3 className="credential-deck-title" style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem', textAlign: 'center' }}>
